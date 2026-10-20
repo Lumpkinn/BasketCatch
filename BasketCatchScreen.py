@@ -1,8 +1,10 @@
 import pygame as pg
 import os
 
+#TODO: ADD BUTTONS TO TITLE
 
-#TODO: Fix path issues, and make sure that the text shows up properly!!! (here and setText() method.)
+
+#TODO: Fix path issues, and make sure that the text shows up properly!!! ( look here and at setText() method.)
 #fontpath = os.path("Assets/Resources/Pusab-MnqP.otf")
 
 #make sure to add the buttons
