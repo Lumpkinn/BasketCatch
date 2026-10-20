@@ -1,5 +1,6 @@
 import pygame as pg
 import os
+import BasketCatchPlayer as bcp, BasketCatchVeggie as bcv, BasketCatchScreen as bcs
 #all things considered, i should prolly make a little function that lets me make some simple gui elements before i do anything
 
 #use delta for everything movement related
@@ -8,10 +9,7 @@ import os
 #If you need some clarification, chimp pygame project should clarify some stuff
 #assetsDirectory = os.path.split()
 
-running = True
 
-#put the path to all the sprites here. Maybe put this in a dict?
-veggieSprites = []
 
 def loadImg():
      imageName = os.path.join()
@@ -19,15 +17,17 @@ def loadImg():
 
 class mainWindow:
      delta = 0
-     def __init__():
+     def __init__(self):
           pg.init()
           #prolly just setting the dimensions of the window.
+          global screen
           screen = pg.display.set_mode((1280,720))
           clock = pg.time.Clock()
           global playerLocation
           playerLocation = pg.Vector2(screen.get_width()/2, screen.get_height()/2)
           global veggieLocation
           veggieLocation = pg.Vector2(screen.get_width()/2, screen.get_height()/2)
+          running = True
           while running:
                for event in pg.event.get():
                     if event.type == pg.QUIT:
@@ -35,6 +35,7 @@ class mainWindow:
                screen.fill("white")
 
                #methods for everything else go here
+               player = physObj()
 
                pg.display.flip()
 
@@ -46,6 +47,10 @@ class physObj():
      def Player():
           #??: Do I need to code in collision manuallly?? idrk tbh, ill look into it l8r
           #handles movement (Specifically side to side)
+          
+          #Little test to see player
+          pg.draw.circle(screen, "red", playerLocation, 40)
+
           PlayerKey = pg.key.get_pressed()
           if PlayerKey[pg.k_a]:
                playerLocation.x -= 300
@@ -58,3 +63,4 @@ class physObj():
                #makes veggies move down
                veggieLocation.y += 100
                
+mainWindow()
