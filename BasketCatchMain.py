@@ -8,39 +8,39 @@ import BasketCatchPlayer as bcp, BasketCatchVeggie as bcv, BasketCatchScreen as 
 #If you need some clarification, chimp pygame project should clarify some stuff
 #assetsDirectory = os.path.split()
 
-class mainWindow:
+screen = pg.display.set_mode((1280,720))
+
+class GameWindow:
+     
      delta = 0
+
      def __init__(self):
           pg.init()
           #prolly just setting the dimensions of the window.
           pg.display.set_caption("BasketCatch")
-          global screen
-          screen = pg.display.set_mode((1280,720))
           clock = pg.time.Clock()
-          global playerLocation
-          playerLocation = pg.Vector2(screen.get_width()/2, screen.get_height()/2)
-          global veggieLocation
-          veggieLocation = pg.Vector2(screen.get_width()/2, screen.get_height()/2)
           running = True
-          
+          player = bcp.player(screen)
           while running:
+          
                for event in pg.event.get():
                     if event.type == pg.QUIT:
                          running = False
-               screen.fill("white")
-               pg.draw.circle(screen, "red", playerLocation, 40)
-               #methods for everything else go here
-               player = bcp.player()
-
-               PlayerKey = pg.key.get_pressed()
-               if PlayerKey[pg.K_a]:
-                    player.moveL(delta)
-
-               if PlayerKey[pg.K_d]:
-                    player.moveR(delta)
-
-               delta = clock.tick(30) / 1000
-          pg.display.flip()
+               pg.display.flip()
+               
+               #title screen code
+               title = bcs.menuScreen(screen)
+               title.setText(screen, "BasketCatch", "Basket Catch")
+               
+               #ALL OF THE GAME CODE BELOW
+               if title.isStart == True:
+                    PlayerKey = pg.key.get_pressed()
+                    if PlayerKey[pg.K_a]:
+                         player.moveL(delta)
+                    if PlayerKey[pg.K_d]:
+                         player.moveR(delta)
+                    delta = clock.tick(30) / 1000
+                    
 
                
 
@@ -49,6 +49,6 @@ class mainWindow:
           pass
 
 
-Game = mainWindow()
+Game = GameWindow()
 
 pg.quit()
