@@ -2,8 +2,11 @@ import pygame as pg
 import os
 
 
+#TODO: Fix path issues, and make sure that the text shows up properly!!! (here and setText() method.)
+#fontpath = os.path("Assets/Resources/Pusab-MnqP.otf")
+
 #make sure to add the buttons
-titleFont = pg.font.Font("Assets/Resources/Pusab-MnqP.otf", 23)
+#titleFont = pg.font.Font(fontpath, 23)
 
 
 
@@ -21,9 +24,9 @@ class menuScreen():
      def setText(self,screen, CustomTitle, CustomMessage):
           self.title = CustomTitle
           self.text = CustomMessage
-          Titletext = titleFont.render(CustomMessage, True, "black")
-          textbox = Titletext.get_rect()
-          screen.blit(Titletext, textbox)
+#          Titletext = titleFont.render(CustomMessage, True, "black")
+ #         textbox = Titletext.get_rect()
+  #        screen.blit(Titletext, textbox)
      #add exit button and start button (The most you really have to change between the two things is just the text.)
      def GameStart():
           pass

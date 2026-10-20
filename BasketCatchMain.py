@@ -3,7 +3,6 @@ import os
 import BasketCatchPlayer as bcp, BasketCatchVeggie as bcv, BasketCatchScreen as bcs
 
 #use delta for everything movement related
-
 #make use of this l8r, after the sprites are done.
 #If you need some clarification, chimp pygame project should clarify some stuff
 #assetsDirectory = os.path.split()
@@ -33,20 +32,15 @@ class GameWindow:
                title.setText(screen, "BasketCatch", "Basket Catch")
                
                #ALL OF THE GAME CODE BELOW
-               if title.isStart == True:
+               #if title.isStart == True:
+               if True:
                     PlayerKey = pg.key.get_pressed()
                     if PlayerKey[pg.K_a]:
                          player.moveL(delta)
                     if PlayerKey[pg.K_d]:
                          player.moveR(delta)
+                    player.redraw(screen)
                     delta = clock.tick(30) / 1000
-                    
-
-               
-
-     def loadImg():
-          imageName = os.path.join()
-          pass
 
 
 Game = GameWindow()
