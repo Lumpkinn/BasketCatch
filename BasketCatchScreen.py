@@ -11,14 +11,15 @@ import os
 #titleFont = pg.font.Font(fontpath, 23)
 
 
-
 class menuScreen():
      def __init__(self, screen):
           self.text = ""
           self.title = ""
           self.size = [480,480]
           screen.fill("purple")
+          
           self.isStart = False
+
 
                              
           
@@ -32,3 +33,14 @@ class menuScreen():
      #add exit button and start button (The most you really have to change between the two things is just the text.)
      def GameStart():
           pass
+#class for the buttons (if I need, i can make a settings menu as well)
+class selectionButton():
+     def __init__(self,x,y,width,height, onclick, singleuse, buttontext):
+          self.x = x
+          self.y = y
+          self.width = width
+          self.height = height
+          self.onclick = onclick
+          self.singleuse = singleuse
+          self.buttontext = buttontext
+          
