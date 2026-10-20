@@ -1,7 +1,6 @@
 import pygame as pg
 import os
 import BasketCatchPlayer as bcp, BasketCatchVeggie as bcv, BasketCatchScreen as bcs
-#all things considered, i should prolly make a little function that lets me make some simple gui elements before i do anything
 
 #use delta for everything movement related
 
@@ -9,17 +8,12 @@ import BasketCatchPlayer as bcp, BasketCatchVeggie as bcv, BasketCatchScreen as 
 #If you need some clarification, chimp pygame project should clarify some stuff
 #assetsDirectory = os.path.split()
 
-
-
-def loadImg():
-     imageName = os.path.join()
-     pass
-
 class mainWindow:
      delta = 0
      def __init__(self):
           pg.init()
           #prolly just setting the dimensions of the window.
+          pg.display.set_caption("BasketCatch")
           global screen
           screen = pg.display.set_mode((1280,720))
           clock = pg.time.Clock()
@@ -28,39 +22,33 @@ class mainWindow:
           global veggieLocation
           veggieLocation = pg.Vector2(screen.get_width()/2, screen.get_height()/2)
           running = True
+          
           while running:
                for event in pg.event.get():
                     if event.type == pg.QUIT:
                          running = False
                screen.fill("white")
-
+               pg.draw.circle(screen, "red", playerLocation, 40)
                #methods for everything else go here
-               player = physObj()
+               player = bcp.player()
 
-               pg.display.flip()
+               PlayerKey = pg.key.get_pressed()
+               if PlayerKey[pg.K_a]:
+                    player.moveL(delta)
+
+               if PlayerKey[pg.K_d]:
+                    player.moveR(delta)
 
                delta = clock.tick(30) / 1000
-     pg.quit()
+          pg.display.flip()
 
-#class for the players and veggies               
-class physObj():
-     def Player():
-          #??: Do I need to code in collision manuallly?? idrk tbh, ill look into it l8r
-          #handles movement (Specifically side to side)
-          
-          #Little test to see player
-          pg.draw.circle(screen, "red", playerLocation, 40)
-
-          PlayerKey = pg.key.get_pressed()
-          if PlayerKey[pg.k_a]:
-               playerLocation.x -= 300
-          if PlayerKey[pg.k_d]:
-               playerLocation.x += 300
-
-          def Veggies():
-               #TODO: Handle veggie spawning
                
-               #makes veggies move down
-               veggieLocation.y += 100
-               
-mainWindow()
+
+     def loadImg():
+          imageName = os.path.join()
+          pass
+
+
+Game = mainWindow()
+
+pg.quit()

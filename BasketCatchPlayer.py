@@ -9,9 +9,13 @@ class player():
         self.speed = 10
         #sprite size dependant
         self.size = [50,50]
+        
     
-    def moveL(self):
-        self.position[0] += self.speed
+    def moveL(self, delta):
+        self.position[0] += self.speed * delta
 
-    def moveR(self):
-        self.position[0] += self.speed
+    def moveR(self, delta):
+        self.position[0] += self.speed * delta
+
+    def CheckCollision():
+        pass
