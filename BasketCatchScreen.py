@@ -1,11 +1,12 @@
 import pygame as pg
 import os
 
-#TODO: ADD BUTTONS TO TITLE
-
+#TODO: ADD BUTTONS TO TITLE (button code is marked out, consider making it its own class. you might need it l8r)
 
 #TODO: Fix path issues, and make sure that the text shows up properly!!! ( look here and at setText() method.)
-#fontpath = os.path("Assets/Resources/Pusab-MnqP.otf")
+
+#TODO: make score indicator (shouldn't be that hard)
+
 
 #make sure to add the buttons
 #titleFont = pg.font.Font(fontpath, 23)
@@ -20,8 +21,10 @@ class menuScreen():
           #button code
           buttonfont = pg.font.SysFont('courier',35)
           buttonText = buttonfont.render('Start', True, (100,100,100))
-
-
+          #draw the button
+          pg.draw.rect(screen, (2,200,50), [screenWidth/2, screenHeight/2, 140, 40])
+          #this line is for the text. Make sure that the stuff is aligned properly.
+          screen.blit(buttonText, (screenWidth/2+50, screenHeight/2))
 
                              
           

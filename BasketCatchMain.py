@@ -2,14 +2,12 @@ import pygame as pg
 import os, random
 import BasketCatchPlayer as bcp, BasketCatchVeggie as bcv, BasketCatchScreen as bcs
 
-#use delta for everything movement related
-#make use of this l8r, after the sprites are done.
-#If you need some clarification, chimp pygame project should clarify some stuff
-#assetsDirectory = os.path.split()
+#make use of this l8r, after the sprites are done. If you need some clarification, chimp pygame project should clarify some stuff. here the line: assetsDirectory = os.path.split()
 
 
-#cant remeber what I needed the screen size for, but to get it, I need to call .get_width(), or get_height() on a screen instance
+#issue with button detection
 
+#screen things
 screen = pg.display.set_mode((1280,720))
 #size of screen
 screenHeight = screen.get_height()
@@ -35,8 +33,11 @@ class GameWindow:
                     if event.type == pg.QUIT:
                          running = False
                     if event.type == pg.MOUSEBUTTONDOWN:
+                         print(screenwidth/2, screenwidth/2+140,screenHeight/2 ,screenHeight/2+40, mouse[0], mouse[1])
                          if screenwidth/2 <= mouse[0] <= screenwidth/2+140 and screenHeight/2 <= mouse[1] <=screenHeight/2+40:
                               #starts the game.
+                              print("hehehehe 4")
+                              
                               isStart = True
                pg.display.flip()
                
