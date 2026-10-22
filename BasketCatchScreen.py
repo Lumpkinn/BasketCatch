@@ -12,13 +12,15 @@ import os
 
 
 class menuScreen():
-     def __init__(self, screen):
+     def __init__(self, screen, screenHeight, screenWidth):
           self.text = ""
           self.title = ""
           self.size = [480,480]
           screen.fill("purple")
-          
-          self.isStart = False
+          #button code
+          buttonfont = pg.font.SysFont('courier',35)
+          buttonText = buttonfont.render('Start', True, (100,100,100))
+
 
 
                              

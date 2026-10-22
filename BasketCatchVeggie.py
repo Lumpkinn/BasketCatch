@@ -14,18 +14,24 @@ x=1
 
 class Obj():
 
-     def __init__(self):
+     def __init__(self, screen):
           #Initial values, feel free to tweak as needed.
           self.position =[x,0]
           self.speed = 20
           self.size = [30,30]
           #this variable is checking if the veggie adds to your score, or if it ends the game.
           self.goodness = True
+          #Placeholder for the fruit
+          pg.draw.circle(screen, "green", self.position, 20)
+
 
      #handles the falling speed. Again, feel free to tweak as needed.
      def fall(self):
-          while self.position != 0:
-               self.position -= 10
+          while self.position[1] != 0:
+               self.position[1] -= 10
+
+     def redraw(self, screen):
+        pg.draw.circle(screen, "red", self.position, 40)
 
      def evil(self):
           self.goodness = False
