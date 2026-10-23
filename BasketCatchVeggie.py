@@ -1,12 +1,11 @@
 import pygame as pg
 import os
 
+#TODO: Basically, each instance should come with a sprite, a rect drawn around it, and if its good or evil. 
+
 #TODO: make sure that the sprite resources for the veggies are stored in an array for good ones, and one for bad ones. change the array used depending on if its good or not
 
-#put the path to all the sprites here. Maybe combine the two arrays into a dict?
-goodVeggieSprites = []
-
-evilVeggieSprites = []
+VeggieSprites = {"EvilVeggies":[], "PureVeggies":[]}
 
 #use this to randomize the position of the apples
 

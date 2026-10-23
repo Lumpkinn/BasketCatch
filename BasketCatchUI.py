@@ -1,11 +1,16 @@
 import pygame as pg
 
 class GUIElement:
-     #TWEAK CONSTRUCTOR!!!!!!!!!!!!
-     def __init__(self, screen, screenHeight, screenWidth):
-          self.text = ""
-          self.title = ""
-          self.size = [480,480]
+     #TODO: MAKE ALL OF THIS GO TO THE BUTTON CODE
+     def __init__(self,x,y,width,height, onclick, singleuse, buttontext):
+          self.x = x
+          self.y = y
+          self.width = width
+          self.height = height
+          self.onclick = onclick
+          self.singleuse = singleuse
+          self.buttontext = buttontext
+          
 
      #!!!!!BE AWARE OF HOW PYGAME USES IT'S COORDINATE PLANE, ITS NOT NORMAL!!!!!!
      #button method (buttons size is set, add more parameters if needed)
