@@ -49,21 +49,12 @@ class GameWindow:
                #if isStart == True:
                screen.fill((255,255,255))
                if True:
-                    #collision code (checking if the object is out of frame, and then preventing it from moving)
-                    if player.CheckCollision().colliderect(BorderRect[0]):
-                         canMoveL = False
-                    else:
-                         canMoveL = True
 
-                    if player.CheckCollision().colliderect(BorderRect[0]):
-                         canMoveR = False
-                    else:
-                         canMoveR = True
                     
                     PlayerKey = pg.key.get_pressed()
-                    if PlayerKey[pg.K_a] or PlayerKey[pg.K_LEFT] and canMoveL == True:
+                    if (PlayerKey[pg.K_a] or PlayerKey[pg.K_LEFT]) and player.Get_Xpos() > 10:
                          player.moveL(delta)
-                    if PlayerKey[pg.K_d] or PlayerKey[pg.K_RIGHT] and canMoveR == True:
+                    if (PlayerKey[pg.K_d] or PlayerKey[pg.K_RIGHT]) and player.Get_Xpos() < 1200:
                          player.moveR(delta)
 
 

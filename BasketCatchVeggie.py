@@ -3,7 +3,7 @@ import os
 
 #TODO: Basically, each instance should come with a sprite, a rect drawn around it, and if its good or evil. 
 
-#TODO: make sure that the sprite resources for the veggies are stored in an array for good ones, and one for bad ones. change the array used depending on if its good or not
+#TODO: make sure that the sprite resources (we're gonna use stock images for the inital ship, I can't be bothered to make sprites with the time I have left) for the veggies are stored in an array for good ones, and one for bad ones. change the array used depending on if its good or not
 
 VeggieSprites = {"EvilVeggies":[], "PureVeggies":[]}
 
